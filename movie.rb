@@ -2,8 +2,18 @@ class Movie
 	def initialize(title, rank=0)
 		@title = title.capitalize
 		@rank = rank
-		#puts "Created a movie object with title #{@title} and rank of #{@rank}."
+		@snack_carbs = Hash.new(0)
 	end
+
+	def carbs_consumed
+		@snack_carbs.values.reduce(0, :+)
+	end	
+
+	def ate_snack(snack)
+		@snack_carbs[snack.name] += snack.carbs
+		puts "#{title} showing sold #{snack.carbs} #{snack.name} units."
+		puts "#{title}'s snacks: #{@snack_carbs}"
+	end	
 
 	def to_s
 		"#{@title} has a rank of #{@rank}. (#{status})"
@@ -33,6 +43,10 @@ class Movie
 		 "Flop" 
 		end	
 	end
+
+	def <=>(other_movie)
+		other_movie.rank <=> @rank
+	end	
 
 	attr_accessor :title, :rank
 

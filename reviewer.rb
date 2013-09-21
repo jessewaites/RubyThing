@@ -17,4 +17,8 @@ module Reviewer
 			puts "#{movie.title} got a thumbs up."
 		end		
 	end
+
+				
+
+
 end	

@@ -1,6 +1,7 @@
 require_relative 'movie'
 require_relative 'playlist'
 
+
 movie1 = Movie.new("goonies", 10)
 movie2 = Movie.new("ghostbusters", 30)
 movie3 = Movie.new("goldfinger")
@@ -13,11 +14,15 @@ playlist1.add_movie(movie3)
 
 playlist1.play
 
+
 playlist2 = Playlist.new("Fozzie")
 playlist2.add_movie(movie3)
 playlist2.add_movie(movie4)
 
-playlist2.play
+playlist2.play(5)
+
+playlist1.print_stats
+playlist2.print_stats
 
 
 
