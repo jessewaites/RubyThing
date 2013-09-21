@@ -9,13 +9,28 @@ class Playlist
 	def add_movie(movie)
 		@movies << movie
 	end
+
+	def roll_die
+		rand(1..6)
+	end	
 	
-	def play
+	def play	
 	puts "#{@name}'s playlist:"
 	puts			 
 
 	@movies.each do |m|
-	m.thumbs_up
+		roll_die
+		number_rolled = roll_die
+		case number_rolled
+		when 1..2
+			m.thumbs_down
+			puts "#{m.title} got a thumbs down."
+		when 3..4
+			puts "#{m.title} was skipped."
+		else
+			m.thumbs_up
+			puts "#{m.title} got a thumbs up."
+		end		
 	puts m	
 	end
 	puts

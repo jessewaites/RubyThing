@@ -6,7 +6,7 @@ class Movie
 	end
 
 	def to_s
-		"#{@title} has a rank of #{@rank}."
+		"#{@title} has a rank of #{@rank}. (#{status})"
 	end	
 
 	def thumbs_up
@@ -20,6 +20,19 @@ class Movie
 	def normalized_rank
 		@rank / 10
 	end	
+
+	def hit?
+		@rank >= 10
+	end
+
+	def status
+		# This code does the same thing as the if/else below: hit? ? "Hit" : "Flop"
+		if hit?
+		 "Hit"
+		else
+		 "Flop" 
+		end	
+	end
 
 	attr_accessor :title, :rank
 
