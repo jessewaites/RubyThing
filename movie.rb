@@ -48,6 +48,10 @@ class Movie
 		other_movie.rank <=> @rank
 	end	
 
+	def test
+		puts test
+	end	
+
 	attr_accessor :title, :rank
 
 end
