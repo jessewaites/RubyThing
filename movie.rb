@@ -48,9 +48,12 @@ class Movie
 		other_movie.rank <=> @rank
 	end	
 
-	def test
-		puts test
-	end	
+	def each_snack
+		@snack_carbs.each do |name, carbs|
+			snack = Snack.new(name, carbs)
+			yield snack
+		end	
+	end		
 
 	attr_accessor :title, :rank
 

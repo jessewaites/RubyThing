@@ -13,6 +13,3 @@ module Snackbar
     end	
 end
 
-#puts Snackbar::SNACKS
-# snack = Snackbar.random
-# puts "Enjoy your #{snack.name}! (#{snack.carbs} carbs)"
